@@ -28,7 +28,7 @@ public class Premium extends Usuario implements Paquete {
         System.out.println("Funcion de Premium");
     }
 
-    Premium(String ususario, String contraseña){
+    public Premium(String ususario, String contraseña){
         super(ususario, contraseña);
     }
 }
