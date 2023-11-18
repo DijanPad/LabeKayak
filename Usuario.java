@@ -4,7 +4,7 @@ protected String fecha;
 protected boolean ida;
 protected boolean vuelta; 
 protected int nBoletos;
-protected int aerolinea;
+protected String aerolinea;
 protected String numeroDeTarjeta;
 protected int cuotas;
 protected String claseVuelo;
@@ -12,6 +12,13 @@ protected int nAsiento;
 protected int nMaletas;
 protected String ususario;
 protected String contraseña;
+
+public Usuario(String ususario, String contraseña) {
+    this.ususario = ususario;
+    this.contraseña = contraseña;
+}
+
+
 
 public String getFecha() {
     return fecha;
@@ -37,10 +44,10 @@ public int getnBoletos() {
 public void setnBoletos(int nBoletos) {
     this.nBoletos = nBoletos;
 }
-public int getAerolinea() {
+public String getAerolinea() {
     return aerolinea;
 }
-public void setAerolinea(int aerolinea) {
+public void setAerolinea(String aerolinea) {
     this.aerolinea = aerolinea;
 }
 public String getNumeroDeTarjeta() {

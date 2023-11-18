@@ -1,15 +1,34 @@
-public class Premium extends Usuario implements Paquete {
-    public void reservaViaje(){}
+import java.util.Random;
 
-    public void confirmacionPago(){}
+public class Premium extends Usuario implements Paquete {
+    public void reservaViaje(){
+        
+        System.out.println("Funcion de Premium");
+    }
+    
+    public void confirmacionPago(){
+        
+        System.out.println("Funcion de Premium");
+    }
 
     public int seleccionAsiento(){
-        return 0;
+        System.out.println("Funcion de Premium");
+        Random random = new Random();
+        int n = random.nextInt(120);
+        return n;
     }
 
     public int cantidadMaletas(){
-        return 0;
+        System.out.println("Funcion de Premium");
+        return super.getnMaletas();
     }
 
-    public void modificarPerfil(){}
+    public void modificarPerfil(){
+        
+        System.out.println("Funcion de Premium");
+    }
+
+    Premium(String ususario, String contraseña){
+        super(ususario, contraseña);
+    }
 }
