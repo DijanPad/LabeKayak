@@ -1,5 +1,13 @@
+/** Programacion orientada a objetos -  seccion 10
+ * Luis Francisco Padilla Juárez - 23663
+ * Lab4, Polimorfismo
+ * 17-11-2323
+ * @return Usuario
+ */
+
 public class Usuario {
     
+    //atributos
 protected String fecha;
 protected boolean ida;
 protected boolean vuelta; 
@@ -13,13 +21,15 @@ protected int nMaletas;
 protected String ususario;
 protected String contraseña;
 
+
+//constructor (reducido por temas de "creacion de usuario nuevo")
 public Usuario(String ususario, String contraseña) {
     this.ususario = ususario;
     this.contraseña = contraseña;
 }
 
 
-
+//metodos (osea solo setters y getters)
 public String getFecha() {
     return fecha;
 }

@@ -1,3 +1,10 @@
+/** Programacion orientada a objetos -  seccion 10
+ * Luis Francisco Padilla Juárez - 23663
+ * Lab4, Polimorfismo
+ * 17-11-2323
+ * @return Kayak
+ */
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -21,6 +28,8 @@ public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
         
+
+        //lector csv
 try (BufferedReader br = new BufferedReader(new FileReader(database))) {
                 String encabezado = br.readLine();
                 String linea;
@@ -39,8 +48,8 @@ try (BufferedReader br = new BufferedReader(new FileReader(database))) {
                     String numeroDeTarjeta = valores[8];
                     int cuotas = Integer.parseInt(valores[9]);
                     String claseVuelo = valores[10]; 
-                    int nAsiento = Integer.parseInt(valores[10]);
-                    int nMaletas = Integer.parseInt(valores[11]);
+                    int nAsiento = Integer.parseInt(valores[11]);
+                    int nMaletas = Integer.parseInt(valores[12]);
                     
                     //clasificar por objeto
                     if ("B".equals(type)) {
@@ -78,7 +87,7 @@ try (BufferedReader br = new BufferedReader(new FileReader(database))) {
                 e.printStackTrace();
             }
 
-
+//main en accion 
         while(run == true){
             System.out.println(menu);
             System.out.println("Ingrese una opcion: ");
@@ -154,6 +163,7 @@ try (BufferedReader br = new BufferedReader(new FileReader(database))) {
             }else{
                 run = true;
             }
+            //guardar datos para mas tarde
             try (FileWriter writer = new FileWriter(database)) {
             
                 writer.write("type,usuario,contrasena,fecha,ida,vuelta,nBoletos,aerolinea,numeroDeTarjeta,cuotas,claseVuelo,nAsiento,nMaletas\n");
@@ -162,11 +172,13 @@ try (BufferedReader br = new BufferedReader(new FileReader(database))) {
                 
                 if(ususarios.get(i) instanceof Base){
                     writer.write("B" + ","+
-                    ususarios.get(i).getAerolinea() + ","+
+                    ususarios.get(i).getUsusario()+ ","+
+                    ususarios.get(i).getContraseña()+ ","+
                     ususarios.get(i).getFecha() + ","+
                     ususarios.get(i).isIda() + ","+
                     ususarios.get(i).isVuelta() + ","+
                     ususarios.get(i).getnBoletos() + ","+
+                    ususarios.get(i).getAerolinea() + ","+
                     ususarios.get(i).getNumeroDeTarjeta() + ","+
                     ususarios.get(i).getCuotas() + ","+
                     ususarios.get(i).getClaseVuelo() + ","+
@@ -175,12 +187,14 @@ try (BufferedReader br = new BufferedReader(new FileReader(database))) {
                     "\n" );
                 }
                 if(ususarios.get(i) instanceof Premium){
-                    writer.write("B" + ","+
-                    ususarios.get(i).getAerolinea() + ","+
+                    writer.write("P" + ","+
+                    ususarios.get(i).getUsusario()+ ","+
+                    ususarios.get(i).getContraseña()+ ","+
                     ususarios.get(i).getFecha() + ","+
                     ususarios.get(i).isIda() + ","+
                     ususarios.get(i).isVuelta() + ","+
                     ususarios.get(i).getnBoletos() + ","+
+                    ususarios.get(i).getAerolinea() + ","+
                     ususarios.get(i).getNumeroDeTarjeta() + ","+
                     ususarios.get(i).getCuotas() + ","+
                     ususarios.get(i).getClaseVuelo() + ","+

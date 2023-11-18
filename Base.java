@@ -1,3 +1,10 @@
+/** Programacion orientada a objetos -  seccion 10
+ * Luis Francisco Padilla Juárez - 23663
+ * Lab4, Polimorfismo
+ * 17-11-2323
+ * @return Base
+ */
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -5,6 +12,8 @@ public class Base extends Usuario implements Paquete {
 
     Scanner scanner = new Scanner(System.in);
 
+
+    //bucles y validaciones
     public void boo() {
         boolean a = true;
         while (a == true) {
@@ -27,7 +36,7 @@ public class Base extends Usuario implements Paquete {
     public void boo3() {
         boolean a = true;
         while (a == true) {
-            System.out.println("Viaje de ida: \n" +
+            System.out.println("Viaje de vuelta: \n" +
                     " 1.Si \n" +
                     " 2.No  ");
             String op = scanner.nextLine();
@@ -47,9 +56,9 @@ public class Base extends Usuario implements Paquete {
     public void boo2() {
         boolean a = true;
         while (a == true) {
-            System.out.println("Viaje de ida: \n" +
-                    " 1.Si \n" +
-                    " 2.No  ");
+            System.out.println("En que clase desea volar: \n" +
+                    " 1.Coach\n" +
+                    " 2.Primera clase  ");
             String op = scanner.nextLine();
             
             if (op.equals("1")) {super.setClaseVuelo("Coach");
@@ -64,7 +73,7 @@ public class Base extends Usuario implements Paquete {
     }
     
    
-
+//metodos interfaz
     public void reservaViaje(){
         System.out.println("ingrese la fecha de su viaje: ");
         String fecha = scanner.nextLine();
@@ -104,14 +113,18 @@ public class Base extends Usuario implements Paquete {
         boolean modificar = true;
 
         while (modificar == true){
+            
+            System.out.println("Perfil:  \n 1.Modificar cliente \n 2.Aplicar cupon \n 3.Salir" );
             String opcion = scanner.nextLine();
-            System.out.println("Perfil:  \n 1.Modificar cliente \n 2.Aplicar cupon" );
             if(opcion.equals("1")){
                 System.out.println("te has vuelto Premium!");
                 trunPremium();
             }
             if(opcion.equals("2")){
                 System.out.println("Cupon aplicado");
+            }
+            if(opcion.equals("3")){
+                modificar = false;
             }
         }
     }
@@ -121,6 +134,6 @@ public class Base extends Usuario implements Paquete {
 
     public Premium trunPremium(){
         Premium premium = new Premium(this.ususario,this.contraseña);
-        return premium;
+        return premium; //funcion definida 
     }
 }

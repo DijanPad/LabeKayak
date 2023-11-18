@@ -1,2 +1,2 @@
 type,usuario,contrasena,fecha,ida,vuelta,nBoletos,aerolinea,numeroDeTarjeta,cuotas,claseVuelo,nAsiento,nMaletas
-B,0,false,false,false,1,null,0,0,0,1,
+B,Dijan,2,1,true,false,2,,19829183913,3,Primera Clase,0,0,

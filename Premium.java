@@ -1,3 +1,12 @@
+/** Programacion orientada a objetos -  seccion 10
+ * Luis Francisco Padilla Juárez - 23663
+ * Lab4, Polimorfismo
+ * 17-11-2323
+ * @return Premium
+ */
+
+
+//jajaja este no lo hago B)
 import java.util.Random;
 
 public class Premium extends Usuario implements Paquete {
