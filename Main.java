@@ -150,6 +150,7 @@ try (BufferedReader br = new BufferedReader(new FileReader(database))) {
 
             }if(opcion.equals("3")){
             System.out.println("Adios!");
+            run = false;
             }else{
                 run = true;
             }

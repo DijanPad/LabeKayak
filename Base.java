@@ -6,32 +6,64 @@ public class Base extends Usuario implements Paquete {
     Scanner scanner = new Scanner(System.in);
 
     public void boo() {
-        System.out.println("Viaje de ida: \\n" + //
-                " 1.Si \\n" + //
-                " 2.No  ");
-        String op = scanner.nextLine();
-        if (op.equals("1")){super.setIda(true); }
-        if (op.equals("2")){super.setIda(false); }
-        else{boo();}
+        boolean a = true;
+        while (a == true) {
+            System.out.println("Viaje de ida: \n" +
+                    " 1.Si \n" +
+                    " 2.No  ");
+            String op = scanner.nextLine();
+            
+            if (op.equals("1")) {
+                super.setIda(true);
+                a = false; 
+            } else if (op.equals("2")) {
+                super.setIda(false);
+                a = false; 
+            } else {
+                System.out.println("Ingrese una opcion valida");
+            }
+        }
     }
-
     public void boo3() {
-        System.out.println("Viaje de ida: \\n" + //
-                " 1.Si \\n" + //
-                " 2.No  ");
-        String op = scanner.nextLine();
-        if (op.equals("1")){super.setVuelta(true); }
-        if (op.equals("2")){super.setVuelta(false); }
-        else{boo3();}
+        boolean a = true;
+        while (a == true) {
+            System.out.println("Viaje de ida: \n" +
+                    " 1.Si \n" +
+                    " 2.No  ");
+            String op = scanner.nextLine();
+            
+            if (op.equals("1")) {
+                super.setVuelta(true);
+                a = false; 
+            } else if (op.equals("2")) {
+                super.setVuelta(false);
+                a = false; 
+            } else {
+                System.out.println("Ingrese una opcion valida");
+            }
+        }
     }
 
     public void boo2() {
-        System.out.println("Clase de vuelo: \n 1.Coach \n 2.Primera clase ");
-        String op = scanner.nextLine();
-        if (op.equals("1")){super.setClaseVuelo("Coach"); }
-        if (op.equals("2")){super.setClaseVuelo("Primera Clase"); }
-        else{boo2();}
+        boolean a = true;
+        while (a == true) {
+            System.out.println("Viaje de ida: \n" +
+                    " 1.Si \n" +
+                    " 2.No  ");
+            String op = scanner.nextLine();
+            
+            if (op.equals("1")) {super.setClaseVuelo("Coach");
+                super.setIda(true);
+                a = false; 
+            } else if (op.equals("2")){super.setClaseVuelo("Primera Clase"); 
+                a = false; 
+            } else {
+                System.out.println("Ingrese una opcion valida");
+            }
+        }
     }
+    
+   
 
     public void reservaViaje(){
         System.out.println("ingrese la fecha de su viaje: ");
@@ -75,7 +107,8 @@ public class Base extends Usuario implements Paquete {
             String opcion = scanner.nextLine();
             System.out.println("Perfil:  \n 1.Modificar cliente \n 2.Aplicar cupon" );
             if(opcion.equals("1")){
-                
+                System.out.println("te has vuelto Premium!");
+                trunPremium();
             }
             if(opcion.equals("2")){
                 System.out.println("Cupon aplicado");
@@ -84,5 +117,10 @@ public class Base extends Usuario implements Paquete {
     }
     public Base(String ususario, String contraseña){
         super(ususario, contraseña);
+    }
+
+    public Premium trunPremium(){
+        Premium premium = new Premium(this.ususario,this.contraseña);
+        return premium;
     }
 }
